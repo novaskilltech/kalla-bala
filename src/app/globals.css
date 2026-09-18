@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700;800&family=Scheherazade+New:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #fbf9f4;
+  --text-main: #1e293b;
+  --card-bg: #ffffff;
+}
+
+.dark {
+  --bg-main: #0b1120;
+  --text-main: #f1f5f9;
+  --card-bg: #162032;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Quranic verse styling */
+.font-quran {
+  font-family: 'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+  line-height: 2.2;
+}
+
+.font-scheherazade {
+  font-family: 'Scheherazade New', 'Amiri', serif;
+}
+
+/* Accessibility: reduce motion if user requested */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print layout optimizations */
+@media print {
+  header,
+  footer,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .print-card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    margin-bottom: 1rem !important;
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "total": 55,
+  "wordCounts": {
+    "كَلَّا": 33,
+    "بَلَى": 22
+  },
+  "categoryCounts": {
+    "كَلَّا::stop": 15,
+    "كَلَّا::connect": 18,
+    "بَلَى::connect": 5,
+    "بَلَى::prefer_connect": 4,
+    "بَلَى::stop": 13
+  },
+  "duplicates": []
+}
