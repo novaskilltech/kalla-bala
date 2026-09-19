@@ -32,13 +32,25 @@ export function generateMetadata({ params }: Props): Metadata {
   const item = kallaBalaData.items.find((i) => i.id === params.id);
   if (!item) return { title: 'الموضع غير موجود' };
 
-  const title = `الوقف على ${item.word} في سورة ${item.sura} الآية ${item.ayah} — ${item.scholarChoice}`;
+  const title = `الوقف على ${item.word} في سورة ${item.sura} (الآية ${item.ayah}) — ${item.scholarChoice}`;
+  const description = `حكم ${item.word} في سورة ${item.sura} آية ${item.ayah} : ${item.scholarChoice}. ${item.simpleExplanation}`;
+  const url = `https://kalla-bala.vercel.app/positions/${item.id}`;
+
   return {
     title,
-    description: item.simpleExplanation,
+    description,
     openGraph: {
       title,
-      description: item.simpleExplanation,
+      description,
+      url,
+      type: 'article',
+      siteName: 'كَلَّا وَبَلَى',
+      locale: 'ar_AR',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
     },
   };
 }
