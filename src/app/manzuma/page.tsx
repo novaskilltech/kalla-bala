@@ -142,6 +142,132 @@ export default function ManzumaPage() {
             </span>
           </div>
 
+          {/* 📜 Chain of Transmission (السند المتصل إلى الناظم قراءة وسماعا) */}
+          <div className="mt-6 pt-6 border-t border-emerald-700/60 space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2 text-amber-300 font-bold text-sm">
+                <Scroll className="w-4 h-4 text-amber-400" />
+                <span>
+                  {lang === 'ar'
+                    ? 'سلسلة الإسناد المتصل إلى الناظم (قراءةً وسماعًا)'
+                    : 'Chaîne de transmission continue jusqu\'à l\'auteur (Qirāʾatan wa Samāʾan)'}
+                </span>
+              </div>
+              <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30 font-semibold">
+                {lang === 'ar' ? 'سندٌ عالٍ (واسطتان فقط)' : 'Sanad élevé (2 intermédiaires)'}
+              </span>
+            </div>
+
+            <p className="text-xs text-emerald-100/80 leading-relaxed">
+              {lang === 'ar'
+                ? 'يروي هذه المنظومة المباركة بالسند المتصل قراءةً وسماعًا لجميع أبياتها:'
+                : 'Cette منظومة bénie est transmise avec chaîne ininterrompue par récitation et audition intégrale (qirāʾatan wa samāʾan) :'}
+            </p>
+
+            {/* Stepper / Timeline Nodes */}
+            <div className="space-y-3 relative before:absolute before:right-4 before:top-4 before:bottom-4 before:w-0.5 before:bg-emerald-600/50 dark:before:bg-emerald-500/30 pr-8">
+              
+              {/* Node 1: Le récipiendaire / L'étudiant */}
+              <div className="relative space-y-1">
+                <div className="absolute -right-8 top-1 w-7 h-7 rounded-full bg-emerald-500 text-slate-950 font-bold text-xs flex items-center justify-center shadow-md">
+                  1
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/10">
+                  <span className="text-xs font-bold text-emerald-300 block">
+                    {lang === 'ar' ? 'الطالب / الطالبة المُجاز(ة)' : 'L\'étudiant(e) récipiendaire'}
+                  </span>
+                  <p className="text-[11px] text-emerald-100/70">
+                    {lang === 'ar'
+                      ? 'بعد إتقان حفظ الأبيات العشرة وضبطها والتسميع المباشر'
+                      : 'Après apprentissage, maîtrise des 10 vers et récitation devant le cheikh'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Connecting badge */}
+              <div className="text-[10px] text-amber-300/90 font-semibold pr-2">
+                ↓ {lang === 'ar' ? 'يرويها قراءةً وسماعًا وعرضًا عن:' : 'Reçoit par récitation et audition auprès de :'}
+              </div>
+
+              {/* Node 2: Sheikh Salah Eddine Ahmed Abousoulaymane */}
+              <div className="relative space-y-1">
+                <div className="absolute -right-8 top-1 w-7 h-7 rounded-full bg-emerald-400 text-slate-950 font-bold text-xs flex items-center justify-center shadow-md">
+                  2
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/10">
+                  <div className="flex items-center justify-between flex-wrap gap-1">
+                    <span className="text-xs font-bold text-white block">
+                      {lang === 'ar' ? 'الشيخ صلاح الدين أحمد أبو سليمان' : 'Cheikh Salah Eddine Ahmed Abousoulaymane'}
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-200">
+                      {lang === 'ar' ? 'المُجيز' : 'Dispensateur de l\'ijāzah'}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-emerald-100/70">
+                    {lang === 'ar'
+                      ? 'المجاز بالمنظومة قراءةً وسماعًا وضبطًا'
+                      : 'Certifié dans la manzūma par récitation et audition (qirāʾatan wa samāʾan)'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Connecting badge */}
+              <div className="text-[10px] text-amber-300/90 font-semibold pr-2">
+                ↓ {lang === 'ar' ? 'وهو يرويها قراءةً وسماعًا عن:' : 'Qui la transmet par récitation et audition d\'après :'}
+              </div>
+
+              {/* Node 3: Sheikh Tawfiq Ibrahim Damra */}
+              <div className="relative space-y-1">
+                <div className="absolute -right-8 top-1 w-7 h-7 rounded-full bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center shadow-md">
+                  3
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 border border-white/10">
+                  <div className="flex items-center justify-between flex-wrap gap-1">
+                    <span className="text-xs font-bold text-amber-200 block">
+                      {lang === 'ar' ? 'فضيلة الشيخ توفيق بن إبراهيم ضمرة حفظه الله' : 'Cheikh Tawfiq Ibrahim Damra (qu\'Allah le préserve)'}
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-amber-500/30 text-amber-200">
+                      {lang === 'ar' ? 'تلميذ الناظم المباشر' : 'Disciple direct du Naadhim'}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-emerald-100/70">
+                    {lang === 'ar'
+                      ? 'العالم المقرئ المعروف والمصنّف المتقن في علوم القراءات والتجويد ورسم المصاحف'
+                      : 'Éminent savant et auteur réputé dans les lectures coraniques et les sciences du Coran'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Connecting badge */}
+              <div className="text-[10px] text-amber-300/90 font-semibold pr-2">
+                ↓ {lang === 'ar' ? 'وهو يرويها قراءةً وسماعًا عن ناظمها ومؤلفها:' : 'Qui la transmet par récitation et audition de son auteur :'}
+              </div>
+
+              {/* Node 4: Sheikh Ali Tawfiq Al-Nahhas (Author) */}
+              <div className="relative space-y-1">
+                <div className="absolute -right-8 top-1 w-7 h-7 rounded-full bg-amber-300 text-slate-950 font-bold text-xs flex items-center justify-center shadow-md">
+                  4
+                </div>
+                <div className="bg-gradient-to-r from-amber-500/20 to-emerald-500/20 rounded-xl p-3 border border-amber-400/40">
+                  <div className="flex items-center justify-between flex-wrap gap-1">
+                    <span className="text-xs font-bold text-amber-300 block">
+                      {lang === 'ar' ? 'فضيلة الشيخ العلامة علي بن محمد توفيق النحاس رحمه الله' : 'Cheikh Ali bin Muhammad Tawfiq Al-Nahhas (m. 1441 H)'}
+                    </span>
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-amber-400 text-slate-900 font-bold">
+                      {lang === 'ar' ? 'ناظم المنظومة' : 'Auteur & Naadhim'}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-emerald-100/80">
+                    {lang === 'ar'
+                      ? 'ناظم المنظومة وصاحب الرسالة، عالم القراءات وشيخ مقرأة الإمام الشاطبي بالإسكندرية (ت 1441 هـ)'
+                      : 'Auteur du poème et de l\'épître, grand savant des lectures et Cheikh de la Maqra\'ah Al-Shatibiyyah d\'Alexandrie'}
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
