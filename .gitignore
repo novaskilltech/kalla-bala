@@ -17,6 +17,7 @@
 .DS_Store
 *.pem
 *.zip
+.vercel
 
 # debug
 npm-debug.log*
@@ -29,3 +30,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
