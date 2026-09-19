@@ -13,15 +13,16 @@ execSync(`node "${path.join(__dirname, 'validate-data.mjs')}"`, {
   stdio: 'inherit',
 });
 
-// 2. Run Next.js Build with Node 22 Windows libuv fix
+// 2. Run Next.js Build
 console.log('\n--- Step 2: Building Next.js production bundle ---');
-const patchPath = path.join(__dirname, 'patch-node.cjs').replace(/\\/g, '/');
-const nextBin = path.join(projectRoot, 'node_modules', 'next', 'dist', 'bin', 'next').replace(/\\/g, '/');
+const env = { ...process.env };
 
-const env = {
-  ...process.env,
-  NODE_OPTIONS: `${process.env.NODE_OPTIONS || ''} -r "${patchPath}"`.trim(),
-};
+if (process.platform === 'win32') {
+  const patchPath = path.join(__dirname, 'patch-node.cjs').replace(/\\/g, '/');
+  env.NODE_OPTIONS = `${process.env.NODE_OPTIONS || ''} -r "${patchPath}"`.trim();
+}
+
+const nextBin = path.join(projectRoot, 'node_modules', 'next', 'dist', 'bin', 'next');
 
 execSync(`node "${nextBin}" build`, {
   cwd: projectRoot,
