@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/og-manzuma.png',
+        url: 'https://kalla-bala.vercel.app/og-manzuma.png',
         width: 1200,
         height: 630,
         alt: 'منظومة الوقف على كَلَّا وبَلَى — طلب الإجازة بالسند المتصل قراءة وسماعا عبر واتساب',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'منظومة كَلَّا وبَلَى — طلب الإجازة بالسند المتصل (قراءةً وسماعًا)',
     description: 'طلب الإجازة بالسند المتصل قراءةً وسماعًا: الشيخ صلاح الدين أحمد ➔ الشيخ توفيق ضمرة ➔ الناظم الشيخ علي توفيق النحاس رحمه الله (+212 716-014148).',
-    images: ['/twitter-manzuma.png'],
+    images: ['https://kalla-bala.vercel.app/twitter-manzuma.png'],
   },
 };
 

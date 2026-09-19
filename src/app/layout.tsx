@@ -18,6 +18,16 @@ export const metadata: Metadata = {
   ],
   creator: 'Salah Eddine Ahmed Abousoulaymane (novaskilltech)',
   publisher: 'novaskilltech',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
     title: 'كَلَّا وَبَلَى — الوقف والابتداء خطوة بخطوة',
     description: 'تعلّم متى تقف ومتى تصل في 55 موضعًا قرآنيًا مع شروح وبطاقات واختبارات تفاعلية وفق تحرير الشيخ توفيق النحاس.',
@@ -27,7 +37,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og.png',
+        url: 'https://kalla-bala.vercel.app/og.png',
         width: 1200,
         height: 630,
         alt: 'كَلَّا وَبَلَى — الوقف والابتداء خطوة بخطوة',
@@ -40,7 +50,7 @@ export const metadata: Metadata = {
     description: 'دليل عملي وتطبيقي لفهم الوقف والابتداء في 55 موضعًا من القرآن الكريم لكلمتي كَلَّا وبَلَى.',
     site: '@novaskilltech',
     creator: '@novaskilltech',
-    images: ['/twitter-image.png'],
+    images: ['https://kalla-bala.vercel.app/twitter-image.png'],
   },
   robots: {
     index: true,
