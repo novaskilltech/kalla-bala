@@ -12,9 +12,12 @@ export const metadata: Metadata = {
   },
   description: 'دليل عملي وتطبيقي لفهم الوقف والابتداء في 55 موضعًا من القرآن الكريم لكلمتي كَلَّا وبَلَى، وفق تحرير الشيخ توفيق النحاس.',
   keywords: ['القرآن الكريم', 'تجويد', 'وقف وابتداء', 'كلا', 'بلى', 'توفيق النحاس', 'علوم القرآن', 'وقف', 'وصل'],
-  authors: [{ name: 'الشيخ علي بن محمد توفيق النحاس' }],
-  creator: 'Nova Skill Tech',
-  publisher: 'Nova Skill Tech',
+  authors: [
+    { name: 'الشيخ علي بن محمد توفيق النحاس' },
+    { name: 'Salah Eddine Ahmed Abousoulaymane', url: 'https://github.com/novaskilltech' },
+  ],
+  creator: 'Salah Eddine Ahmed Abousoulaymane (novaskilltech)',
+  publisher: 'novaskilltech',
   openGraph: {
     title: 'كَلَّا وَبَلَى — الوقف والابتداء خطوة بخطوة',
     description: 'تعلّم متى تقف ومتى تصل في 55 موضعًا قرآنيًا مع شروح وبطاقات واختبارات تفاعلية وفق تحرير الشيخ توفيق النحاس.',

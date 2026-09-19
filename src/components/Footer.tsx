@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useI18n } from '@/lib/i18n';
 import { Heart, BookOpen, ShieldCheck } from 'lucide-react';
+import { VisitorCounter } from './VisitorCounter';
 
 export function Footer() {
   const { t, lang } = useI18n();
@@ -68,13 +69,36 @@ export function Footer() {
 
       </div>
 
-      <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-slate-200/60 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-3">
-        <p>
-          {lang === 'ar' ? '© موقع كَلَّا وبَلَى — متاح لوجه الله وقفًا ونفعًا عامًا.' : '© Kallā & Balā — Ressource éducative libre et gratuite.'}
-        </p>
-        <p className="flex items-center gap-1">
-          <span>{lang === 'ar' ? 'صنع بعناية وإتقان' : 'Conçu avec rigueur et soin'}</span>
-        </p>
+      {/* Bottom Bar: Copyright, Signature, and Dynamic Visitor Counter */}
+      <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-slate-200/60 dark:border-slate-800/60 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-4">
+        
+        {/* Purpose & Copyright */}
+        <div className="space-y-1 text-center md:text-start">
+          <p>
+            {lang === 'ar' 
+              ? 'موقع كَلَّا وبَلَى — متاح لوجه الله تعالى وقفًا ونفعًا عامًا.' 
+              : 'Kallā & Balā — Ressource éducative libre et gratuite.'}
+          </p>
+          <p className="font-semibold text-slate-700 dark:text-slate-300">
+            {lang === 'ar'
+              ? 'حقوق النشر © 2026 novaskilltech. جميع الحقوق محفوظة.'
+              : 'Copyright © 2026 novaskilltech. Tous droits réservés.'}
+          </p>
+        </div>
+
+        {/* Developer Signature */}
+        <div className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/60 dark:border-slate-700/60 text-slate-700 dark:text-slate-300 font-medium text-center">
+          <span>{lang === 'ar' ? 'تطوير:' : 'Développé par :'}</span>
+          <span className="font-bold text-emerald-700 dark:text-emerald-400">
+            Salah Eddine Ahmed Abousoulaymane
+          </span>
+        </div>
+
+        {/* Dynamic Visitor Counter */}
+        <div className="flex items-center">
+          <VisitorCounter />
+        </div>
+
       </div>
     </footer>
   );
